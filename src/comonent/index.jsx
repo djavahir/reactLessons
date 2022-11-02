@@ -6,7 +6,7 @@ import React,{ Component } from "react";
     render(){
         return(
 <div>
-    <h1>Salom Javohitr </h1>
+    <h1>Salom Javohitrfdsfdjsgdsj hozir branch navbardamiz </h1>
 </div>
         )
     }
