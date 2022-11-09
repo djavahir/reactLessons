@@ -4,41 +4,54 @@ class GetName extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
-      title: "hello",
+      email: "",
+      password: "",
+      repassword: "",
     };
   }
 
   render() {
-    let count = 0;
-    const plus = () => {
-      this.setState({ count: this.state.count + 1 });
+    const onChange = ({ target: { value, name } }) => {
+      console.log(value, name);
+      this.setState({[name]:value})
     };
-    const minus = () => {
-      if (this.state.count > 0) this.setState({ count: this.state.count - 1 });
+    const passWord = ({ target: { value, name } }) => {
+      console.log(value, name);
+      this.setState({[name]:value})
     };
-    const onChange = (e) => {
-      this.setState({ title: e.target.value });
+    const repassWord = ({ target: { value, name } }) => {
+      console.log(value, name);
+      this.setState({[name]:value})
     };
-    const onSelect = (e) => {
-      this.setState({ title: e.target.value });
-    };
-
     return (
       <div>
-        <h1>Count: {this.state.count}</h1>
-        <button onClick={plus}>+</button>
-        <button onClick={minus}>-</button>
+        <h1>{this.state.title}</h1>
+        <h1>Email:{this.state.email}</h1>
+        <h1>Password:{this.state.email}</h1>
+        <h1>Re password:{this.state.email}</h1>
         <hr />
-        <h1>Title:{this.state.title}</h1>
-        <input onChange={onChange} type="text" />
-        <hr />
-        <select name="" id="" onChange={onSelect}>
-          <option value="uz">uzb</option>
-          <option value="ru">rus</option>
-          <option value="eng">eng</option>
-          <option value="kor">kore</option>
-        </select>
+        <input
+          onChange={onChange}
+          type="text"
+          name="email"
+          placeholder="Email"
+        />
+        <br />
+        <br />
+        <input
+          onChange={passWord}
+          type="password"
+          name="password"
+          placeholder="Password"
+        />
+        <br />
+        <br />
+        <input
+          onChange={repassWord}
+          type="number"
+          name="password"
+          placeholder="Re password"
+        />
       </div>
     );
   }
