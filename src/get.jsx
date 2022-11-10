@@ -4,54 +4,25 @@ class GetName extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
-      repassword: "",
+      name: "",
+      surname: "",
     };
   }
-
   render() {
-    const onChange = ({ target: { value, name } }) => {
-      console.log(value, name);
-      this.setState({[name]:value})
-    };
-    const passWord = ({ target: { value, name } }) => {
-      console.log(value, name);
-      this.setState({[name]:value})
-    };
-    const repassWord = ({ target: { value, name } }) => {
-      console.log(value, name);
-      this.setState({[name]:value})
-    };
+    const onChange=(event)=>{
+      this.setState({[event.target.name]:event.target.value})
+    }
+
     return (
       <div>
-        <h1>{this.state.title}</h1>
-        <h1>Email:{this.state.email}</h1>
-        <h1>Password:{this.state.email}</h1>
-        <h1>Re password:{this.state.email}</h1>
+        <h1>Name:{this.state.name}</h1>
+        <h1>Surname:{this.state.surname}</h1>
         <hr />
-        <input
-          onChange={onChange}
-          type="text"
-          name="email"
-          placeholder="Email"
-        />
         <br />
-        <br />
-        <input
-          onChange={passWord}
-          type="password"
-          name="password"
-          placeholder="Password"
-        />
-        <br />
-        <br />
-        <input
-          onChange={repassWord}
-          type="number"
-          name="password"
-          placeholder="Re password"
-        />
+        <input onChange={onChange} type="text" name="name" placeholder="name" />
+        <br /><br />
+        <br /><br />
+        <input onChange={onChange} type="text" name="surname" placeholder="surname"/>
       </div>
     );
   }
